@@ -11,7 +11,6 @@ parser.add_argument("-c", "--codes",  action="store_true")
 
 args = parser.parse_args()
 
-
 if __name__ == "__main__":
     for file in args.files:
         split_pdf(file.name, args.number)
