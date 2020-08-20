@@ -43,4 +43,4 @@ Parse complete, codes saved: to_split3.txt
 
 ## License
 
-MIT © 2018 jezman
+MIT © 2020 jezman
