@@ -6,8 +6,8 @@ COLUMNS = [1, 2, 3]
 
 parser = argparse.ArgumentParser()
 parser.add_argument('files', type=argparse.FileType('r'), nargs='+')
-parser.add_argument("-r", "--row", type=int, choices=ROWS, help="rows count")
-parser.add_argument("-c", "--column", type=int, choices=COLUMNS, help="column count")
+parser.add_argument("-r", "--row", type=int, choices=ROWS, help="rows count", required=True)
+parser.add_argument("-c", "--column", type=int, choices=COLUMNS, help="column count", required=True)
 
 args = parser.parse_args()
 
