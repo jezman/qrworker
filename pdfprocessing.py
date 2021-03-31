@@ -29,8 +29,10 @@ def split_pdf(filename, rows, columns):
 
                     coordinates['y_top'] -= coordinates['qr_hight']
                     coordinates['y_bottom'] -= coordinates['qr_hight']
-
-                    pdfWriter.addPage(pdf)
+                    
+                    # Blank page check
+                    if len(pdf['/Resources']['/XObject']) > 10:
+                            pdfWriter.addPage(pdf)
 
                 if columns > 1:
                     coordinates['x_left'] += coordinates['qr_width']
