@@ -1,15 +1,16 @@
 import argparse
 from pdfprocessing import split_pdf
 
-ALLOWED_NUMBERS = [4, 6, 8]
+ROWS = [4, 6, 8]
+COLUMNS = [1, 2, 3]
 
 parser = argparse.ArgumentParser()
 parser.add_argument('files', type=argparse.FileType('r'), nargs='+')
-parser.add_argument("-n", "--number", type=int, choices=ALLOWED_NUMBERS,
-                    help="number QR codes per page")
+parser.add_argument("-r", "--row", type=int, choices=ROWS, help="rows count")
+parser.add_argument("-c", "--column", type=int, choices=COLUMNS, help="column count")
 
 args = parser.parse_args()
 
 if __name__ == "__main__":
     for file in args.files:
-        split_pdf(file.name, args.number)
+        split_pdf(file.name, args.row, args.column)
