@@ -1,7 +1,6 @@
 import argparse
 from pdfprocessing import split_pdf
 
-
 ROWS = [4, 6, 8]
 COLUMNS = [1, 2, 3]
 
