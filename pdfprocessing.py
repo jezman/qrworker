@@ -17,7 +17,7 @@ def get_coordinations(rows):
                 'qr_hight': 102, 'qr_width': 172}
 
 
-def split_pdf(filename, rows, columns):
+def split_pdf(filename, rows, columns, verbose):
     with open(filename, 'rb') as in_f:
         pdf_input = PdfFileReader(in_f)
         pdfWriter = PdfFileWriter()
@@ -33,7 +33,8 @@ def split_pdf(filename, rows, columns):
 
                 for count in range(rows):
                     pdf = copy(pdf_input.getPage(num_page))
-                    print(coordinates)
+                    if verbose:
+                        print(coordinates)
 
                     pdf.cropBox.lowerLeft = (coordinates['x_left'], coordinates['y_top'])
                     pdf.cropBox.upperRight = (coordinates['x_right'], coordinates['y_bottom'])
